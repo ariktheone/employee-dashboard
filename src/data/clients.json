@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Acme Corp",
+    "contact": "John Doe",
+    "email": "john@acme.com",
+    "phone": "+1 (555) 111-2222",
+    "location": "New York",
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "name": "Globex Inc",
+    "contact": "Jane Smith",
+    "email": "jane@globex.com",
+    "phone": "+1 (555) 333-4444",
+    "location": "San Francisco",
+    "status": "Active"
+  },
+  {
+    "id": 3,
+    "name": "Initech",
+    "contact": "Peter Gibbons",
+    "email": "peter@initech.com",
+    "phone": "+1 (555) 555-6666",
+    "location": "Boston",
+    "status": "Inactive"
+  },
+  {
+    "id": 4,
+    "name": "Umbrella Corp",
+    "contact": "Alice Abernathy",
+    "email": "alice@umbrella.com",
+    "phone": "+1 (555) 777-8888",
+    "location": "Chicago",
+    "status": "Active"
+  },
+  {
+    "id": 5,
+    "name": "Wayne Enterprises",
+    "contact": "Bruce Wayne",
+    "email": "bruce@wayne.com",
+    "phone": "+1 (555) 999-0000",
+    "location": "Gotham",
+    "status": "Active"
+  },
+  {
+    "id": 6,
+    "name": "Stark Industries",
+    "contact": "Tony Stark",
+    "email": "tony@stark.com",
+    "phone": "+1 (555) 222-3333",
+    "location": "Los Angeles",
+    "status": "Active"
+  },
+  {
+    "id": 7,
+    "name": "Wonka Industries",
+    "contact": "Willy Wonka",
+    "email": "wonka@wonka.com",
+    "phone": "+1 (555) 444-5555",
+    "location": "London",
+    "status": "Inactive"
+  },
+  {
+    "id": 8,
+    "name": "Hooli",
+    "contact": "Gavin Belson",
+    "email": "gavin@hooli.com",
+    "phone": "+1 (555) 666-7777",
+    "location": "Palo Alto",
+    "status": "Active"
+  }
+]
