@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Sidebar from './components/layout/Sidebar.jsx';
 import Header from './components/layout/Header';
 import OverviewPage from './components/pages/OverviewPage';
@@ -17,6 +18,10 @@ import ConsultancyPage from './components/pages/ConsultancyPage.jsx';
 import CalendarPage from './components/pages/CalendarPage.jsx';
 import HolidayPage from './components/pages/HolidayPage.jsx';
 import ReportPage from './components/pages/ReportPage.jsx';
+import LoginPage from './components/pages/LoginPage.jsx';
+import RegisterPage from './components/pages/RegisterPage.jsx';
+import { onAuthStateChange } from './services/auth';
+
 // Common style for placeholder pages
 const placeholderStyle = "bg-white rounded-xl p-6 shadow-sm border border-gray-100 h-96 flex items-center justify-center";
 
@@ -104,4 +109,36 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+function App() {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChange((currentUser) => {
+      setUser(currentUser);
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/login" element={user ? <Navigate to="/" /> : <LoginPage />} />
+        <Route path="/register" element={user ? <Navigate to="/" /> : <RegisterPage />} />
+        <Route path="/*" element={user ? <Dashboard /> : <Navigate to="/login" />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;

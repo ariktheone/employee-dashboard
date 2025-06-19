@@ -1,8 +1,21 @@
 // components/layout/Header.jsx
 import React from 'react';
 import { Menu, Bell, Settings } from 'lucide-react';
+import { logout } from '../../services/auth';
+import { useNavigate } from 'react-router-dom';
 
 const Header = ({ activeTab, setSidebarOpen }) => {
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      // The router in App.jsx will handle the redirect
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
+  };
+
   return (
     <header className="bg-gradient-to-r from-blue-50 via-white to-indigo-50 shadow-sm border-b border-blue-100 px-6 py-4 sticky top-0 z-30">
       <div className="flex items-center justify-between">
@@ -13,24 +26,21 @@ const Header = ({ activeTab, setSidebarOpen }) => {
             onClick={() => setSidebarOpen(true)}
             aria-label="Open sidebar"
           >
-            <Menu className="w-6 h-6 text-blue-600" />
+            <Menu className="w-5 h-5 text-blue-700" />
           </button>
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-blue-800 capitalize tracking-tight drop-shadow-sm transition-all">
-              {activeTab}
-            </h2>
-            <p className="text-sm text-blue-500 mt-1">Welcome back! Here's what's happening today.</p>
+            <h1 className="text-xl font-bold text-blue-900">{activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}</h1>
+            <p className="text-sm text-blue-500">Employee Dashboard</p>
           </div>
         </div>
-        {/* Right: Actions */}
-        <div className="flex items-center space-x-4">
+
+        {/* Right: User Menu */}
+        <div className="flex items-center space-x-3">
           <button
-            className="relative p-2 rounded-full bg-white hover:bg-blue-50 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="p-2 rounded-full bg-white hover:bg-blue-50 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
             aria-label="Notifications"
-            onClick={() => alert('Notifications coming soon!')}
           >
             <Bell className="w-5 h-5 text-blue-500" />
-            <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
           </button>
           <button
             className="p-2 rounded-full bg-white hover:bg-blue-50 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -43,6 +53,11 @@ const Header = ({ activeTab, setSidebarOpen }) => {
             <span className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold mr-2">A</span>
             Admin
           </div>
+          <button 
+            onClick={handleLogout}
+            className="px-4 py-2 text-sm text-white bg-red-500 rounded hover:bg-red-600 transition-colors shadow-sm">
+            Logout
+          </button>
         </div>
       </div>
     </header>
