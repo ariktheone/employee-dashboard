@@ -1,11 +1,20 @@
 // components/layout/Header.jsx
-import React from 'react';
-import { Menu, Bell, Settings } from 'lucide-react';
-import { logout } from '../../services/auth';
+import React, { useState, useEffect } from 'react';
+import { Menu, Bell, Settings, UserCircle } from 'lucide-react';
+import { getCurrentUser, logout } from '../../services/auth';
 import { useNavigate } from 'react-router-dom';
 
-const Header = ({ activeTab, setSidebarOpen }) => {
+const Header = ({ activeTab, setSidebarOpen, setActiveTab }) => {
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Get the current user when the component mounts
+    const currentUser = getCurrentUser();
+    if (currentUser) {
+      setUser(currentUser);
+    }
+  }, []);
 
   const handleLogout = async () => {
     try {
@@ -14,6 +23,27 @@ const Header = ({ activeTab, setSidebarOpen }) => {
     } catch (error) {
       console.error("Logout error:", error);
     }
+  };
+
+  // Function to get the user's initials for the avatar
+  const getUserInitials = () => {
+    if (!user) return 'U';
+    
+    if (user.displayName) {
+      const names = user.displayName.split(' ');
+      if (names.length >= 2) {
+        return `${names[0][0]}${names[1][0]}`.toUpperCase();
+      } else if (names.length === 1 && names[0].length > 0) {
+        return names[0][0].toUpperCase();
+      }
+    }
+    
+    // If no display name, use the first letter of the email
+    if (user.email) {
+      return user.email[0].toUpperCase();
+    }
+    
+    return 'U'; // Default fallback
   };
 
   return (
@@ -49,10 +79,27 @@ const Header = ({ activeTab, setSidebarOpen }) => {
           >
             <Settings className="w-5 h-5 text-blue-500" />
           </button>
-          <div className="hidden md:flex items-center ml-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 font-semibold text-sm shadow">
-            <span className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold mr-2">A</span>
-            Admin
-          </div>
+          <button
+            onClick={() => setActiveTab('profile')}
+            className="hidden md:flex items-center px-3 py-1.5 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 font-semibold text-sm shadow hover:from-blue-200 hover:to-indigo-200 transition-all"
+          >
+            {user?.photoURL ? (
+              <div className="w-7 h-7 rounded-full border-2 border-white mr-2 overflow-hidden">
+                <img 
+                  src={user.photoURL} 
+                  alt="Profile" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ) : (
+              <span className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold mr-2">
+                {getUserInitials()}
+              </span>
+            )}
+            <span className="truncate max-w-[120px]">
+              {user?.displayName || 'My Profile'}
+            </span>
+          </button>
           <button 
             onClick={handleLogout}
             className="px-4 py-2 text-sm text-white bg-red-500 rounded hover:bg-red-600 transition-colors shadow-sm">

@@ -21,6 +21,7 @@ import ReportPage from './components/pages/ReportPage.jsx';
 import LoginPage from './components/pages/LoginPage.jsx';
 import RegisterPage from './components/pages/RegisterPage.jsx';
 import { onAuthStateChange } from './services/auth';
+import ProfilePage from './components/pages/ProfilePage.jsx';
 
 // Common style for placeholder pages
 const placeholderStyle = "bg-white rounded-xl p-6 shadow-sm border border-gray-100 h-96 flex items-center justify-center";
@@ -57,10 +58,10 @@ const Dashboard = () => {
         return <CalendarPage />;
       case 'holiday':
         return <HolidayPage />;
-
       case 'reports':
         return <ReportPage />;
-        
+      case 'profile':
+        return <ProfilePage />; // Add profile page rendering
       case 'messages':
         return (
           <div className={placeholderStyle}>
