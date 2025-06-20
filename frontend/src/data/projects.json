@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Employee Portal Redesign",
+    "status": "Active",
+    "manager": "Sarah Johnson",
+    "team": ["👩‍💻", "🧑‍🎨", "👨‍💼"],
+    "start": "2024-05-01",
+    "end": "2024-08-15",
+    "progress": 70,
+    "tasks": 32,
+    "completed": 22,
+    "budget": "$25,000",
+    "description": "A complete UI/UX overhaul for the internal employee portal.",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Payroll Automation",
+    "status": "Planning",
+    "manager": "Michael Chen",
+    "team": ["👨‍💻", "👩‍💼"],
+    "start": "2024-07-01",
+    "end": "2024-12-01",
+    "progress": 10,
+    "tasks": 12,
+    "completed": 1,
+    "budget": "$15,000",
+    "description": "Automate payroll processing and reporting for HR.",
+    "featured": false
+  }
+]

@@ -1,0 +1,236 @@
+[
+  {
+    "name": "Sarah Johnson",
+    "avatar": "👩‍💻",
+    "department": "Engineering",
+    "records": [
+      {
+        "date": "2025-05-30",
+        "status": "Present",
+        "checkIn": "09:05",
+        "checkOut": "17:10",
+        "late": false,
+        "remarks": ""
+      },
+      {
+        "date": "2025-05-29",
+        "status": "Present",
+        "checkIn": "09:00",
+        "checkOut": "17:00",
+        "late": false,
+        "remarks": ""
+      },
+      {
+        "date": "2025-05-28",
+        "status": "Present",
+        "checkIn": "09:10",
+        "checkOut": "17:00",
+        "late": true,
+        "remarks": "Late arrival"
+      },
+      {
+        "date": "2025-05-27",
+        "status": "Absent",
+        "checkIn": null,
+        "checkOut": null,
+        "late": false,
+        "remarks": "Sick leave"
+      }
+    ]
+  },
+  {
+    "name": "Michael Chen",
+    "avatar": "👨‍💼",
+    "department": "Product",
+    "records": [
+      {
+        "date": "2025-05-30",
+        "status": "Present",
+        "checkIn": "09:25",
+        "checkOut": "17:00",
+        "late": true,
+        "remarks": "Late arrival"
+      },
+      {
+        "date": "2025-05-29",
+        "status": "Absent",
+        "checkIn": null,
+        "checkOut": null,
+        "late": false,
+        "remarks": "Personal leave"
+      },
+      {
+        "date": "2025-05-28",
+        "status": "Present",
+        "checkIn": "09:00",
+        "checkOut": "17:00",
+        "late": false,
+        "remarks": ""
+      },
+      {
+        "date": "2025-05-27",
+        "status": "Present",
+        "checkIn": "09:00",
+        "checkOut": "17:00",
+        "late": false,
+        "remarks": ""
+      }
+    ]
+  },
+  {
+    "name": "Emily Rodriguez",
+    "avatar": "👩‍🎨",
+    "department": "Design",
+    "records": [
+      {
+        "date": "2025-05-30",
+        "status": "On Leave",
+        "checkIn": null,
+        "checkOut": null,
+        "late": false,
+        "remarks": "Annual leave"
+      },
+      {
+        "date": "2025-05-29",
+        "status": "Present",
+        "checkIn": "09:15",
+        "checkOut": "17:10",
+        "late": true,
+        "remarks": "Late arrival"
+      },
+      {
+        "date": "2025-05-28",
+        "status": "Absent",
+        "checkIn": null,
+        "checkOut": null,
+        "late": false,
+        "remarks": "Sick leave"
+      },
+      {
+        "date": "2025-05-27",
+        "status": "Present",
+        "checkIn": "09:05",
+        "checkOut": "17:00",
+        "late": false,
+        "remarks": ""
+      }
+    ]
+  },
+  {
+    "name": "David Park",
+    "avatar": "👨‍💻",
+    "department": "Engineering",
+    "records": [
+      {
+        "date": "2025-05-30",
+        "status": "Absent",
+        "checkIn": null,
+        "checkOut": null,
+        "late": false,
+        "remarks": "Sick leave"
+      },
+      {
+        "date": "2025-05-29",
+        "status": "Present",
+        "checkIn": "09:05",
+        "checkOut": "17:00",
+        "late": false,
+        "remarks": ""
+      },
+      {
+        "date": "2025-05-28",
+        "status": "Present",
+        "checkIn": "09:05",
+        "checkOut": "17:00",
+        "late": false,
+        "remarks": ""
+      },
+      {
+        "date": "2025-05-27",
+        "status": "Present",
+        "checkIn": "09:05",
+        "checkOut": "17:00",
+        "late": false,
+        "remarks": ""
+      }
+    ]
+  },
+  {
+    "name": "Lisa Wong",
+    "avatar": "👩‍💼",
+    "department": "Marketing",
+    "records": [
+      {
+        "date": "2025-05-30",
+        "status": "Present",
+        "checkIn": "08:55",
+        "checkOut": "17:05",
+        "late": false,
+        "remarks": ""
+      },
+      {
+        "date": "2025-05-29",
+        "status": "On Leave",
+        "checkIn": null,
+        "checkOut": null,
+        "late": false,
+        "remarks": "Annual leave"
+      },
+      {
+        "date": "2025-05-28",
+        "status": "Present",
+        "checkIn": "08:55",
+        "checkOut": "17:05",
+        "late": false,
+        "remarks": ""
+      },
+      {
+        "date": "2025-05-27",
+        "status": "Present",
+        "checkIn": "08:55",
+        "checkOut": "17:05",
+        "late": false,
+        "remarks": ""
+      }
+    ]
+  },
+  {
+    "name": "James Wilson",
+    "avatar": "👨‍💼",
+    "department": "HR",
+    "records": [
+      {
+        "date": "2025-05-30",
+        "status": "Present",
+        "checkIn": "09:10",
+        "checkOut": "17:00",
+        "late": true,
+        "remarks": "Late arrival"
+      },
+      {
+        "date": "2025-05-29",
+        "status": "Present",
+        "checkIn": "09:20",
+        "checkOut": "17:00",
+        "late": true,
+        "remarks": "Late arrival"
+      },
+      {
+        "date": "2025-05-28",
+        "status": "On Leave",
+        "checkIn": null,
+        "checkOut": null,
+        "late": false,
+        "remarks": "Annual leave"
+      },
+      {
+        "date": "2025-05-27",
+        "status": "Present",
+        "checkIn": "09:10",
+        "checkOut": "17:00",
+        "late": true,
+        "remarks": "Late arrival"
+      }
+    ]
+  }
+]
